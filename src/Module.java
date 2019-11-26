@@ -5,7 +5,17 @@ public class Module {
     private Acces acces;
     private String nom;
     private Date created_at;
-    public Module( Acces acces, String nom) {
+
+    @Override
+    public String toString() {
+        return "Module{" +
+                ", nom='" + nom + '\'' +
+                "acces=" + acces +
+                ", created_at=" + created_at +
+                '}';
+    }
+
+    public Module(String nom,Acces acces) {
 
         this.acces = acces;
 
@@ -24,12 +34,14 @@ public class Module {
         return created_at;
     }
 
-    public void setAcces(Acces acces) {
+    public Module setAcces(Acces acces) {
         this.acces = acces;
+        return this;
     }
 
-    public void setNom(String nom) {
+    public Module setNom(String nom) {
         this.nom = nom;
+        return this;
     }
 
 

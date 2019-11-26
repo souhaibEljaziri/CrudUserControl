@@ -34,15 +34,30 @@ public class Acces {
         this.created_at = created_at;
     }
 
-    public void setAdd(boolean add) {
+    public Acces setAdd(boolean add) {
         this.add = add;
+        return  this;
     }
 
-    public void setUpdate(boolean update) {
+    public Acces setUpdate(boolean update) {
         this.update = update;
+        return this;
     }
 
-    public void setDelete(boolean delete) {
+
+
+    public Acces setDelete(boolean delete) {
         this.delete = delete;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Acces{" +
+                "add=" + add +
+                ", update=" + update +
+                ", delete=" + delete +
+                ", created_at=" + created_at +
+                '}';
     }
 }

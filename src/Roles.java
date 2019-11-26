@@ -1,3 +1,4 @@
+import javax.management.relation.Role;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,8 +15,9 @@ public class Roles {
         this.modules = modules;
     }
 
-    public void setModules(ArrayList<Module> modules) {
+    public Roles setModules(ArrayList<Module> modules) {
         this.modules = modules;
+        return this;
     }
 
     public Roles(String name, Date created_at) {
@@ -25,8 +27,9 @@ public class Roles {
 
     }
 
-    public void setName(String name) {
+    public Roles setName(String name) {
         this.name = name;
+        return this;
     }
     public String getName() {
         return name;
@@ -35,7 +38,12 @@ public class Roles {
         return created_at;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Roles{" +
+                "name='" + name + '\'' +
+                ", created_at=" + created_at +
+                ", modules=" + modules +
+                '}';
+    }
 }

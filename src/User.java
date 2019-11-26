@@ -1,17 +1,31 @@
-import java.util.Date;
+import com.oracle.webservices.internal.api.databinding.Databinding;
 
+import java.util.Date;
 public class User {
+
+    private final String name;
+    private final String email;
+    private final Date created_at;
+    private final Roles role;
+    public User(Builder builder) {
+        this.name = builder.name;
+        this.email = builder.email;
+        created_at = builder.created_at;
+        this.role=builder.role;
+    }
+
+public static class Builder {
 
 private String name;
 private String email;
 private Date created_at;
 private Roles role;
-    public User( String name, String email,Roles role) {
-        this.name = name;
-        this.email = email;
-        created_at = new Date();
-        role=role;
+    public static Builder newInstance()
+    {
+        return new Builder();
     }
+    private Builder() {}
+
 
 
     public String getName() {
@@ -31,15 +45,33 @@ private Roles role;
     }
 
 
-    public void setName(String name) {
+    public Builder setName(String name) {
         this.name = name;
+        return this;
     }
 
-    public void setEmail(String email) {
+    public Builder setEmail(String email) {
         this.email = email;
+        return this;
     }
 
-    public void setRole(Roles role) {
+    public Builder setRole(Roles role) {
         this.role = role;
+        return this;
     }
+    public User build()
+    {
+        return new User(this);
+    }
+}
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", created_at=" + created_at +
+                ", role=" + role +
+                '}';
+    }
+
 }
