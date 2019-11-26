@@ -1,3 +1,4 @@
+package crudusercontrol;
 import java.util.ArrayList;
 
 public class Main {
@@ -20,7 +21,30 @@ public class Main {
 
         Users.add(user1);
         Users.add(user2);
-        System.out.println(user1);
-        System.out.println(user2);
+        
+        PaymentFactory PaymentFactory1=new PaymentFactory();
+        
+        CreditCard Payment1= (CreditCard) PaymentFactory1.Paymentmethode("CreditCard");
+        Payment1.setCardNumber("1341655").setName("ahmed").setAddress("france ...").setCVV("123").SetPayment(100);
+       
+        Person client1=new Person("1111","mouhamed","97105554");
+        user1.Personlist.add(client1);
+        client1.getPaymentlist().add(Payment1);
+        
+        //affchier les information des utilisateurs
+         for(User userp:Users)
+         {
+             
+             System.out.println(userp);
+             (userp.Personlist).stream().forEach(User_person->{System.out.println(User_person);
+             
+                     (User_person.Paymentlist).stream().forEach(person_payment->{System.out.println(person_payment);});
+                     
+                     });
+         }
+      //  User.Personlist.stream().forEach(e->System.out.println(e));
+      
+         
+        
     }
 }

@@ -1,3 +1,4 @@
+package crudusercontrol;
 import com.oracle.webservices.internal.api.databinding.Databinding;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ public class User {
     private final String email;
     private final Date created_at;
     private final Roles role;
-    private static ArrayList<Person> Personlist = new ArrayList<Person>();
+    ArrayList<Person> Personlist = new ArrayList<Person>();
     public User(Builder builder) {
         this.name = builder.name;
         this.email = builder.email;
@@ -23,7 +24,7 @@ private String name;
 private String email;
 private Date   created_at;
 private Roles role;
-private static ArrayList<Person> Personlist = new ArrayList<Person>();
+private  ArrayList<Person> Personlist = new ArrayList<Person>();
 
     public static Builder newInstance()
     {
@@ -39,7 +40,7 @@ private static ArrayList<Person> Personlist = new ArrayList<Person>();
 
 
 
-    public static ArrayList<Person> getPersonlist() {
+    public ArrayList<Person> getPersonlist() {
         return Personlist;
     }
 
