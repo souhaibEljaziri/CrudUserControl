@@ -8,9 +8,9 @@ public class Roles {
     private Date created_at;
     ArrayList<Module> modules = new ArrayList<Module>();
 
-    public Roles(String name, Date created_at, ArrayList<Module> modules) {
+    public Roles(String name, ArrayList<Module> modules) {
         this.name = name;
-        this.created_at = created_at;
+        this.created_at = new Date();
         this.modules = modules;
     }
 

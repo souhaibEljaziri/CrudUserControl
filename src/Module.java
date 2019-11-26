@@ -5,7 +5,7 @@ public class Module {
     private Acces acces;
     private String nom;
     private Date created_at;
-    public Module(int id, Acces acces, String nom, Date created_at) {
+    public Module( Acces acces, String nom) {
 
         this.acces = acces;
 

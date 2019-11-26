@@ -6,14 +6,11 @@ private String name;
 private String email;
 private Date created_at;
 private Roles role;
-    public User( String name, String email, Date created_at,Roles role) {
-
-
+    public User( String name, String email,Roles role) {
         this.name = name;
         this.email = email;
         created_at = new Date();
         role=role;
-
     }
 
 
