@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Acces acces1=new Acces(true,true,true);
         Module modules1=new Module("User",acces1);
-        Module modules2=new Module("Roles",acces1);
+        Module modules2=new Module("Person",acces1);
         Module modules3=new Module("User",new Acces(true,false,false));
         Modulelist1.add(modules1);
         Modulelist1.add(modules2);

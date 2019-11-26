@@ -1,5 +1,6 @@
 import com.oracle.webservices.internal.api.databinding.Databinding;
 
+import java.util.ArrayList;
 import java.util.Date;
 public class User {
 
@@ -7,26 +8,40 @@ public class User {
     private final String email;
     private final Date created_at;
     private final Roles role;
+    private static ArrayList<Person> Personlist = new ArrayList<Person>();
     public User(Builder builder) {
         this.name = builder.name;
         this.email = builder.email;
         created_at = builder.created_at;
         this.role=builder.role;
+        this.Personlist=builder.Personlist;
     }
 
 public static class Builder {
 
 private String name;
 private String email;
-private Date created_at;
+private Date   created_at;
 private Roles role;
+private static ArrayList<Person> Personlist = new ArrayList<Person>();
+
     public static Builder newInstance()
     {
         return new Builder();
     }
     private Builder() {}
+    public void addPerson(Person p) {
+        Personlist.add(p);
+    }
+    public void RemovePerson(Person p) {
+        Personlist.remove(p);
+    }
 
 
+
+    public static ArrayList<Person> getPersonlist() {
+        return Personlist;
+    }
 
     public String getName() {
         return name;
@@ -49,7 +64,10 @@ private Roles role;
         this.name = name;
         return this;
     }
-
+    public Builder setPersonlist(ArrayList<Person> personlist) {
+        this.Personlist = Personlist;
+        return this;
+    }
     public Builder setEmail(String email) {
         this.email = email;
         return this;
