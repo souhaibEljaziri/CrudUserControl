@@ -15,7 +15,25 @@ public class User {
         this.role=builder.role;
         this.Personlist=builder.Personlist;
     }
+    boolean verifier_acces(String module_name, String acces_name)
+    {
+        if(acces_name.equals("add"))
+        {
+            return (this.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isAdd()).count()>=1);
 
+        }
+        else if(acces_name.equals("update"))
+        {
+
+            return (this.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isUpdate()).count()>=1);
+        }
+        else if(acces_name.equals("delete"))
+        {
+
+            return (this.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isUpdate()).count()>=1);
+        }
+        return false;
+    }
     public Roles getRole() {
         return role;
     }

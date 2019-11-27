@@ -7,27 +7,6 @@ public class Main {
     static ArrayList<Module> Modulelist1 = new ArrayList<Module>();
     static ArrayList<Module> Modulelist2 = new ArrayList<Module>();
 
-
-
-    static boolean verifier_acces(User user1,String module_name,String acces_name)
-    {
-        if(acces_name.equals("add"))
-        {
-        return (user1.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isAdd()).count()>=1);
-
-        }
-        else if(acces_name.equals("update"))
-        {
-
-            return (user1.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isUpdate()).count()>=1);
-        }
-        else if(acces_name.equals("delete"))
-        {
-
-            return (user1.getRole().getModules().stream().filter(e->e.getNom().equals(module_name)&&e.getAcces().isUpdate()).count()>=1);
-        }
-        return false;
-    }
     public static void main(String[] args) {
         Acces acces1=new Acces(true,true,true);
         Module modules1=new Module("User",acces1);
@@ -51,7 +30,12 @@ public class Main {
 */
         Users.add(user1);
         Users.add(user2);
-        System.out.println(verifier_acces(user1,"User","add"));
+
+        //verifier que l'utilisateur user1 peut ajouter un utilisateur
+        System.out.println(user1.verifier_acces("User","add"));
+        //verifier que l'utilisateur user2 ne peut pas supprimer un utilisateur
+        System.out.println(user2.verifier_acces("User","delete"));
+
         PaymentFactory PaymentFactory1=new PaymentFactory();
 
         CreditCard Payment1= (CreditCard) PaymentFactory1.Paymentmethode("CreditCard");
