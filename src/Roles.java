@@ -1,5 +1,4 @@
-package crudusercontrol;
-import javax.management.relation.Role;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,6 +13,10 @@ public class Roles {
         this.name = name;
         this.created_at = new Date();
         this.modules = modules;
+    }
+
+    public ArrayList<Module> getModules() {
+        return modules;
     }
 
     public Roles setModules(ArrayList<Module> modules) {

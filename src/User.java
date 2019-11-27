@@ -1,5 +1,3 @@
-package crudusercontrol;
-import com.oracle.webservices.internal.api.databinding.Databinding;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,7 +16,27 @@ public class User {
         this.Personlist=builder.Personlist;
     }
 
-public static class Builder {
+    public Roles getRole() {
+        return role;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public ArrayList<Person> getPersonlist() {
+        return Personlist;
+    }
+
+    public static class Builder {
 
 private String name;
 private String email;
@@ -82,6 +100,7 @@ private  ArrayList<Person> Personlist = new ArrayList<Person>();
     {
         return new User(this);
     }
+
 }
     @Override
     public String toString() {

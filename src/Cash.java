@@ -1,4 +1,4 @@
-package crudusercontrol;
+
 import java.util.Date;
 
 public class Cash implements Payment{

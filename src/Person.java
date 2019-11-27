@@ -1,4 +1,4 @@
-package crudusercontrol;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -55,9 +55,7 @@ public class Person {
         this.tel = tel;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
+
 
     public void setPere(Person pere) {
         this.pere = pere;

@@ -1,11 +1,9 @@
-package crudusercontrol;
-import java.util.Date;
 
 public class CreditCard implements Payment{
    private String name;
    private String CardNumber;
    private String CVV;
-   private String address; 
+   private String address;
    private float amount;
    CreditCard(){}
     public CreditCard(String name, String CardNumber, String CVV, String address) {
